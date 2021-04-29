@@ -1,4 +1,4 @@
-import { SalesStrategy } from './sales-strategy';
+import { SalesStrategy } from './strategies/sales-strategy';
 
 export class ContextStrategy {
     constructor(private readonly salesStrategy: SalesStrategy) {}
