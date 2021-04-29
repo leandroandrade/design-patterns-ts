@@ -7,10 +7,9 @@ type Campain = {
     promo: string,
     active: boolean
 }
-
-const promos: Campain[] = [
+const promosDB: Campain[] = [
     { promo: 'christmas', active: false },
-    { promo: 'blackfriday', active: true },
+    { promo: 'blackfriday', active: false },
 ];
 
 const strategies = {
@@ -20,7 +19,7 @@ const strategies = {
 };
 
 async function run(client: any) {
-    const active = promos.find((campain) => campain.active);
+    const active = promosDB.find((campain) => campain.active);
     const strategy = strategies[active?.promo] || strategies.default;
 
     const contextStrategy = new ContextStrategy(strategy);
@@ -33,6 +32,6 @@ const client = { id: 1, name: 'john', age: 30 };
 run(client).then((data) => {
     const { strategy, result } = data;
     console.info(
-        `> strategy: ${strategy.constructor.name} | discount ${result} `,
+        `> Strategy: [${strategy.constructor.name}] | discount [${result}]`,
     );
 }).catch((err) => console.error(err));

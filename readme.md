@@ -1,12 +1,13 @@
 # design-pattern-ts
 
+Simple implementation of design patterns using Typescript.
 
-## scripts
+## Scripts
 
 ### strategy
 
 ```bash
-npx ts-node -T strategy
+npm run strategy
 ```
 
 
